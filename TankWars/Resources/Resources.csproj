@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{089BD4F9-2AB7-48BC-AFFF-A155D2D357ED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Resources</RootNamespace>
+    <AssemblyName>Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Background.png" />
+    <Content Include="Images\Beam.gif" />
+    <Content Include="Images\Beam.png" />
+    <Content Include="Images\BlueProjectile.png" />
+    <Content Include="Images\explosion.gif" />
+    <Content Include="Images\GoldProjectile.png" />
+    <Content Include="Images\GreenProjectile.png" />
+    <Content Include="Images\OrangeProjectile.png" />
+    <Content Include="Images\PinkProjectile.png" />
+    <Content Include="Images\powerup.png" />
+    <Content Include="Images\PurpleProjectile.png" />
+    <Content Include="Images\RedProjectile.png" />
+    <Content Include="Images\Runewerks.ico" />
+    <Content Include="Images\tankbodyblue.png" />
+    <Content Include="Images\tankbodygold.png" />
+    <Content Include="Images\tankbodygreen.png" />
+    <Content Include="Images\tankbodyorange.png" />
+    <Content Include="Images\tankbodypink.png" />
+    <Content Include="Images\tankbodypurple.png" />
+    <Content Include="Images\tankbodyred.png" />
+    <Content Include="Images\tankbodyyellow.png" />
+    <Content Include="Images\tankturretblue.png" />
+    <Content Include="Images\tankturretgold.png" />
+    <Content Include="Images\tankturretgreen.png" />
+    <Content Include="Images\tankturretorange.png" />
+    <Content Include="Images\tankturretpink.png" />
+    <Content Include="Images\tankturretpurple.png" />
+    <Content Include="Images\tankturretred.png" />
+    <Content Include="Images\tankturretyellow.png" />
+    <Content Include="Images\Wall.png" />
+    <Content Include="Images\WallSprite.png" />
+    <Content Include="Images\YellowProjectile.png" />
+    <Content Include="Libraries\NetworkController.dll" />
+    <Content Include="README.txt" />
+    <Content Include="settings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Primitives.4.3.0\lib\net45\System.Drawing.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
