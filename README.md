@@ -4,23 +4,23 @@ A simple 2D client/Server Tank game
 Tank Wars Client
 
 ## Authors:
-**Devin White**
+	Devin White
 
-**Xuyen Nguyen**
+	Xuyen Nguyen
 
 
 ### Artwork:
-**Tanks:** Devin
+	Tanks: Devin
 
-**Projectiles:** Devin
+	Projectiles: Devin
 
-**Walls:** Devin
+	Walls: Devin
 
-Background CS 3500 Staff
+	Background CS 3500 Staff
 
-**Death Animation:** Xuyen
+	Death Animation: Xuyen
 
-**Beam Animation:** Xuyen
+	Beam Animation: Xuyen
 
 
 ### Controls:
