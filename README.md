@@ -24,44 +24,44 @@ Tank Wars Client
 
 
 ### Controls:
-**W:** move up
+	W: move up
 
-**A:** move Left
+	A: move Left
 
-**S:** move Down
+	S: move Down
 
-**D:** move right
+	D: move right
 
-**Q/Escape:** Quit
+	Q/Escape: Quit
 
-**B:** Fire Laser
+	B: Fire Laser
 
-**SpaceBar:** Fire projectile
+	SpaceBar: Fire projectile
 
-**R:** retromode engaged(if focus in NOT in the drawingpanel)
+	R: retromode engaged(if focus in NOT in the drawingpanel)
 
-**Left Click:** Fire projectile
+	Left Click: Fire projectile
 
-**Right click:** Fire Laser
+	Right click: Fire Laser
 
 ### Features/UI elements:
-**Address Box:** The Server Address to connect to
+Address Box: The Server Address to connect to
 
-**Name Box:** Sets the players name
+Name Box: Sets the players name
 
-**Connect Button:** Connects to server. Must have a valid name entered.
+Connect Button: Connects to server. Must have a valid name entered.
 
-**Menu Button:** Menu Button
+Menu Button: Menu Button
 
-**About:** About the game
+About: About the game
 
-**Controls:** The game controls
+Controls: The game controls
 
-**Retro Mode:** Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
+Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
 
 
 
-## **************************PS8 Update***************************************************
+## ************************************* PS8 update **********************************************
 ### Development Log:
 
 **11/14/21**
@@ -91,6 +91,7 @@ Tank Wars Client
 	Modified not working Onconnect method
 
 **11/21/2021**
+
 **6 Commits**
 
 	Fixed Connection bugs
@@ -105,19 +106,19 @@ Tank Wars Client
 
 **11/22/2021**
 
-	**1 Commit**
+**1 Commit**
 	
 	Tank drawing updates per frame
 
 **11/23/2021**
 
-	**1 Commit**
+**1 Commit**
 	
 	Projectile graphics added/drawn
 
 **11/24/2021**
 
-	**2 Commits**
+**2 Commits**
 	
 	Fixed typos, bug fixes
 	
@@ -125,7 +126,7 @@ Tank Wars Client
 
 **11/27/2021**
 
-	**2 Commits**
+**2 Commits**
 	
 	Fixed mouse firing bug
 	
@@ -133,7 +134,7 @@ Tank Wars Client
 
 **11/28/2021**
 
-	**3 commits**
+**3 commits**
 	
 	Events modified
 	
@@ -143,7 +144,7 @@ Tank Wars Client
 
 **11/29/2021**
 
-	**7 Commits**
+**7 Commits**
 	
 	Started death animations
 	
@@ -161,13 +162,13 @@ Tank Wars Client
 
 **11/30/2021**
 
-	**1 commit**
+**1 commit**
 	
 	Explosion animation added
 
 **12/01/2021**
 
-	**1 commit**
+**1 commit**
 	
 	Comments Added, added retro Graphics button
 
@@ -185,7 +186,7 @@ Tank Wars Client
 
 
 ## Design decisions: 
-Uses MVC as per specifications. The methods in the form or drawingpanel deal directly with the UI elements, or otherwise call to gameController in order to handle certain events, such as movement
+	Uses MVC as per specifications. The methods in the form or drawingpanel deal directly with the UI elements, or otherwise call to gameController in order to handle certain events, such as movement
 
 ### Movement:
 	As movement, and firing weapons is done by sending JSON strings to the server, which then sends JSON back with a new position, the keyPresses set parts of that command to do specific things, IE, w will add "up" to the move section, space
@@ -217,8 +218,8 @@ Uses MVC as per specifications. The methods in the form or drawingpanel deal dir
 	
 	Tanks with lives greater than 0 do not survive Beams. If they get hit by a beam, they die and also lose 1 life.
 
-## ********************************************* PS9 ***************************************************
-Development log:
+## ***************************************** PS9 *************************************************
+### Development log:
 	December 12, 2021
 		7 commits
 		Fixed lag issue with turret. Fixed problem with AI where they wouldn't fire
@@ -257,23 +258,32 @@ Development log:
 		Created server.cs, ServerContoller.cs, and Settings. Added methods to start server, receive clients' names, and sending data to clients
 		Some PS9 setup
 
-Design Decisions
+### Design Decisions:
 
-LivesMode:
+**LivesMode:**
+
 	This can be toggled on or off by changing the settings.xml file. Using "on" or "off"
+	
 	When LivesMode is on, tanks earn 1 life every 3 scores. If the tank's lives is greater than 0, it doesn't die if its hp gets down to 0. Instead, the tank loses 1 life and its hp restore to maximum.
+	
 	Max number of lives: 3.
+	
 	Tanks with lives greater than 0 do not survive Beams. If they get hit by a beam, they die and also lose 1 life.
 
 
 
-	The Game Settings:
-		The settings: 
-			Universe Size: 2000
-			Milliseconds Per Frame: 60
-			Tank Respawn Rate: 300
-			Maximum Powerups: 4
-			Powerup Spawn Rate: 1650
+**The Game Settings:**
+
+	The settings: 
+		Universe Size: 2000
+		
+		Milliseconds Per Frame: 60
+		
+		Tank Respawn Rate: 300
+		
+		Maximum Powerups: 4
+		
+		Powerup Spawn Rate: 1650
 
 		These settings can be changed from the settings.xml file
 
@@ -300,34 +310,41 @@ LivesMode:
 			Fixed calculation of the "normal modes" beam. It now fires from the tank cannon with far more consistency, and the size accounts for changing world sizes.
 
 
-	The World:
-		Tank and Powerup Placement: The world is divided into a grid of squares. Tanks and powerups spawned into the world are placed in a random square, as long as they do not overlap the walls.
-			Issue: The method works fine most of the time. When it was first implemented, we observed some rare occasions where a very small portion of the tank would overlap the wall and get stuck. This bug might have somehow been solved as we worked other problems since we have not run into the issue for many tests(explained more below).
-			In addition to the Update method in the servercontroller, there is an update method within the World itself. This is due to so many world variables needing to be checked and updated every frame, it was decided this was a much better, and much quicker method.
+**The World:**
 
-		Tank Wraparound: When the tank tries going into a segment of the world's border where there is no walls on both sides of the world, the tank will teleport to the other side as soon as half of it crosses the edge.
+	Tank and Powerup Placement: The world is divided into a grid of squares. Tanks and powerups spawned into the world are placed in a random square, as long as they do not overlap the walls.
 	
-		Projectile Collision with the World's Edges: When a projectile collides the edge of the world, it is destroyed instead of wrapping around. There was talk about making projectile wraparound a setting, but time ran out, so it wasn't done at this point in time.
+	Issue: The method works fine most of the time. When it was first implemented, we observed some rare occasions where a very small portion of the tank would overlap the wall and get stuck. This bug might have somehow been solved as we worked other problems since we have not run into the issue for many tests(explained more below).
 
-	Server Controller:
-		This handles the communications with the World and the Client. It starts the update loop where it monitors the changes in the World and implement the changes every frame. It also sends world elements in JSON form to the client,
-		receives commands from the clients, and informs the world to update accordingly.
+	In addition to the Update method in the servercontroller, there is an update method within the World itself. This is due to so many world variables needing to be checked and updated every frame, it was decided this was a much better, and much quicker method.
 
-	Major Issues:
-		Sample clients and our own clients did not work well together: The sample client appeared laggy and its turret did not spin as smoothly when we connected out client to the same server. The initial diagnosis was that our client was sending too many commands to the server. Due to multiple clients working completely fine if it was ours, OR if it was only theirs.
-		We figured out later that we were calling Commands.Clear() within the foreach loop that ran through all commands, which would cause commands to update at an inconsistent rate. Moving that to after the foreach loop fixed the problem. This also had the effect of fixing the AI problems(they sucked way more than before), that we had no idea how to fix, which was a happy coincidence
+	Tank Wraparound: When the tank tries going into a segment of the world's border where there is no walls on both sides of the world, the tank will teleport to the other side as soon as half of it crosses the edge.
+	
+	Projectile Collision with the World's Edges: When a projectile collides the edge of the world, it is destroyed instead of wrapping around. There was talk about making projectile wraparound a setting, but time ran out, so it wasn't done at this point in time.
 
-		The sample client freezes whenever any tank shoots the beams. We have checked the JSON objects that the server was sending as the beams were fired, and they all looked right. We fixed the issue by moving framesUntilFade in Beam.cs to the top and tagged it with [JsonIgnore]. This appears to have fixed it and prelimary testing shows no new bugs.
+**Server Controller:**
 
-		Oddities and curiousities:
-			There was an issue where when calculating a free space to spawn, a tank would occassionary barely clip the corner of a wall, causing it to be stuck and not able to move, even though it was barely in there. After major testing trying to replicate it, it couldn't be done, whether this is just rare or something was done to fix it is unknown
-			Secondly, there sometimes is an issue where the death animation won't play for some deaths before then playing again. This was found to happen only with an extreme amount of tanks dying at once(60 AI clients) and the problem couldn't be found. It also happens rarely and infrequently.
+	This handles the communications with the World and the Client. It starts the update loop where it monitors the changes in the World and implement the changes every frame. It also sends world elements in JSON form to the client, receives commands from the clients, and informs the world to update accordingly.
 
-		Other minor issues:
-			In some places there appears to be repetition of code, particularly foreach loops. This was done because a better alternative could not be achieved, and performance didn't seem to be affected. There was attempts to change many of these, but the end result in every case ended up performing substantially worse than before the changes, as such,
-			we decided to stick to the implementation that worked the best, despite perhaps not being the most beutiful.
+**Major Issues:**
 
-	Features Planned in Future(?):
+	Sample clients and our own clients did not work well together: The sample client appeared laggy and its turret did not spin as smoothly when we connected out client to the same server. The initial diagnosis was that our client was sending too many commands to the server. Due to multiple clients working completely fine if it was ours, OR if it was only theirs.
+	
+	We figured out later that we were calling Commands.Clear() within the foreach loop that ran through all commands, which would cause commands to update at an inconsistent rate. Moving that to after the foreach loop fixed the problem. This also had the effect of fixing the AI problems(they sucked way more than before), that we had no idea how to fix, which was a happy coincidence
+
+	The sample client freezes whenever any tank shoots the beams. We have checked the JSON objects that the server was sending as the beams were fired, and they all looked right. We fixed the issue by moving framesUntilFade in Beam.cs to the top and tagged it with [JsonIgnore]. This appears to have fixed it and prelimary testing shows no new bugs.
+
+**Oddities and curiousities:**
+
+	There was an issue where when calculating a free space to spawn, a tank would occassionary barely clip the corner of a wall, causing it to be stuck and not able to move, even though it was barely in there. After major testing trying to replicate it, it couldn't be done, whether this is just rare or something was done to fix it is unknown
+	
+	Secondly, there sometimes is an issue where the death animation won't play for some deaths before then playing again. This was found to happen only with an extreme amount of tanks dying at once(60 AI clients) and the problem couldn't be found. It also happens rarely and infrequently.
+
+**Other minor issues:**
+
+	In some places there appears to be repetition of code, particularly foreach loops. This was done because a better alternative could not be achieved, and performance didn't seem to be affected. There was attempts to change many of these, but the end result in every case ended up performing substantially worse than before the changes, as such, we decided to stick to the implementation that worked the best, despite perhaps not being the most beutiful.
+
+### Features Planned in Future(?):
 		Add setting for bullet wraparound
 		Add setting for destroying walls if hit with enough bullets
 		Add setting changing powerup functionality
