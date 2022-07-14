@@ -1,7 +1,7 @@
 # TankGame
 A simple 2D client/Server Tank game
 
-Tank Wars Client
+# Tank Wars Client
 
 ## Authors:
 	Devin White
