@@ -61,7 +61,7 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 
 
 
-## ************************************* PS8 update **********************************************
+## ************************************* PS8 update *********************************************
 ### Development Log:
 
 **11/14/21**
