@@ -3,151 +3,221 @@ A simple 2D client/Server Tank game
 
 Tank Wars Client
 
-Authors:
-Devin White
-Xuyen Nguyen
+## Authors:
+**Devin White**
+
+**Xuyen Nguyen**
 
 
-Artwork:
-Tanks: Devin
-Projectiles: Devin
-Walls: Devin
+### Artwork:
+**Tanks:** Devin
+
+**Projectiles:** Devin
+
+**Walls:** Devin
+
 Background CS 3500 Staff
-Death Animation: Xuyen
-Beam Animation: Xuyen
+
+**Death Animation:** Xuyen
+
+**Beam Animation:** Xuyen
 
 
-Controls:
-W move up
-A move Left
-S move Down
-D move right
-Q/Escape Quit
-B: Fire Laser
-SpaceBar: Fire projectile
-R: retromode engaged(if focus in NOT in the drawingpanel)
-Left Click: Fire projectile
-Right click: Fire Laser
+### Controls:
+**W:** move up
 
-Features/UI elements:
-Address Box: The Server Address to connect to
-Name BoX: Sets the players name
-Connect Button: Connects to server. Must have a valid name entered.
-Menu Button: Menu Button
-	About: About the game
-	Controls: The game controls
-	Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
+**A:** move Left
+
+**S:** move Down
+
+**D:** move right
+
+**Q/Escape:** Quit
+
+**B:** Fire Laser
+
+**SpaceBar:** Fire projectile
+
+**R:** retromode engaged(if focus in NOT in the drawingpanel)
+
+**Left Click:** Fire projectile
+
+**Right click:** Fire Laser
+
+### Features/UI elements:
+**Address Box:** The Server Address to connect to
+
+**Name Box:** Sets the players name
+
+**Connect Button:** Connects to server. Must have a valid name entered.
+
+**Menu Button:** Menu Button
+
+**About:** About the game
+
+**Controls:** The game controls
+
+**Retro Mode:** Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
 
 
 
-**************************PS8***************************************************
-Development Log:
+## **************************PS8 Update***************************************************
+### Development Log:
 
-11/14/21
-1 Commit:
+**11/14/21**
+
+**1 Commit:**
+
 	Inital Setup for PS8
 
-11/16/2021
-3 Commits:
+**11/16/2021**
+
+**3 Commits:**
+
 	Added Member Variables
+	
 	Registered Delegates
+	
 	Started Ui
 
-11/20/2021
-3 Commits:
+**11/20/2021**
+
+**3 Commits:**
+
 	Added to the Form
+	
 	Fleshed out model and View
+	
 	Modified not working Onconnect method
 
-11/21/2021
-6 Commits
+**11/21/2021**
+**6 Commits**
+
 	Fixed Connection bugs
+	
 	Added drawpanel and drawing methods
+	
 	Updated drawingPanel
+	
 	Started drawing world and walls correctly
+	
 	Centered World
 
-11/22/2021
-	1 Commit
+**11/22/2021**
+
+	**1 Commit**
+	
 	Tank drawing updates per frame
 
-11/23/2021
-	1 Commit
+**11/23/2021**
+
+	**1 Commit**
+	
 	Projectile graphics added/drawn
 
-11/24/2021
-	2 Commits
+**11/24/2021**
+
+	**2 Commits**
+	
 	Fixed typos, bug fixes
+	
 	Added Drawing methods
 
-11/27/2021
-	2 Commits
+**11/27/2021**
+
+	**2 Commits**
+	
 	Fixed mouse firing bug
+	
 	Turret Movement implemented, tank movement improves
 
-11/28/2021
-	3 commits
+**11/28/2021**
+
+	**3 commits**
+	
 	Events modified
+	
 	Lasers implemented
+	
 	Movement improved. Cleaned up unncessary code
 
-11/29/2021
-	7 Commits
+**11/29/2021**
+
+	**7 Commits**
+	
 	Started death animations
+	
 	Added sprites, changed drawing to draw sprites
+	
 	Changfed menu buttom. Added about and control buttons
+	
 	Modified HP bar heights for consistency
+	
 	Fixed issue where images were loaded on every draw and lagging
+	
 	HP bar highlighted with black triangle to look better
+	
 	Bug fixes
 
-11/30/2021
-	1 commit
+**11/30/2021**
+
+	**1 commit**
+	
 	Explosion animation added
 
-12/01/2021
-	1 commit
+**12/01/2021**
+
+	**1 commit**
+	
 	Comments Added, added retro Graphics button
 
-Features Planned in Future(?):
+### Features Planned in Future(?):
+
 	Remove retro game button. Make it so Entering a name with Atari in it enables it by default(for the easteregg)
+	
 	Show Frame rate
+	
 	Allow view size modification
+	
 	Improve Sprites
+	
 	Improve death animations by making "dead tank" sprite in location after explosion until it respawns.
 
 
-Design decisions
+## Design decisions: 
 Uses MVC as per specifications. The methods in the form or drawingpanel deal directly with the UI elements, or otherwise call to gameController in order to handle certain events, such as movement
-Movement:
+
+### Movement:
 	As movement, and firing weapons is done by sending JSON strings to the server, which then sends JSON back with a new position, the keyPresses set parts of that command to do specific things, IE, w will add "up" to the move section, space
 	or the mouseclick will add "fire" etc. This is done every frame, and then fired off to the server after all inputs for that frame have been processed. This is done for readibility, as well as a smoother game experience, as doing this once per frame 
 	will make things consistent as JSON data is received.
 
-Visual elements/ The view:
+### Visual elements/ The view:
 	The majority of the drawings were made personally by me(Devin) though they aren't great, I wanted to do it myself because using the premade assets felt like something of a cop out, so I did the best I could. I let Xuyen pick out a death animation she liked, and we implemented that. The background
 	is the only pre-provided element, both because I couldn't think of anything better, and due to the fact that there just wasn't enough time.
-	Retro mode as added due to the fact that we already had basic ataro like block drawings that were used for testing while we were implementing methods in the controller, and updating the world. It was simple enough to implement with a button, just trigger a boolean true or false, and then drawing elements
+	Retro mode as added due to the fact that we already had basic atari like block drawings that were used for testing while we were implementing methods in the controller, and updating the world. It was simple enough to implement with a button, just trigger a boolean true or false, and then drawing elements
 	Modern, or retro, upon the next frame based upon whether the retromode boolean is true or false. This was put in because it was easy, and it's fun.
 	Retromode was(is still?) planned as an easteregg that would permanently be enabled if one put "Atari" somewhere in their player name, but time was short so this implementation was used instead.
 
 
-The controller:
+### The controller:
 	This handles all the actual gameplay elements, It is responsible for connecting to the server, parsing the JSON received by the server, and sending JSON commands to the server after interpreting the keypress and mouse events fired off within the view
 	After parsing the JSON data, the controller then passes off the new World elements(the World,tank, projectiles, powerups, playername, player Id etc) to the view and drawinpanel, which then uses these elements to draw the visuals on a frame by frame basis as needed.
 
-The World:
+### The World:
 	This class holds all the data values, primarily dictionaries. It contains the World Size, as well as a dictionary of all the players(tanks), powerups, projectiles, beams, walls, etc that exist in the game as passed from the server to the gamecontroller.
 	As of now, the world elements only consist of fields and a constructor, and then the values contained in these are passed to other parts of the program for use.
-	it was decided to make a public field in the beam class to hold a timer for the animation frames of the beam drawing. This beam animation element could, and maybe should have been implemented as a seperate internal class in the drawingpanel, but time was short and it was single field in a dictionary used by the drawingpanel anyway.
+	It was decided to make a public field in the beam class to hold a timer for the animation frames of the beam drawing. This beam animation element could, and maybe should have been implemented as a seperate internal class in the drawingpanel, but time was short and it was single field in a dictionary used by the drawingpanel anyway.
 
-LivesMode:
+### LivesMode:
 	This can be toggled on or off by changing the settings.xml file.
 	When LivesMode is on, tanks earn 1 life every 3 scores. If the tank's lives is greater than 0, it doesn't die if its hp gets down to 0. Instead, the tank loses 1 life and its hp restore to maximum.
+	
 	Max number of lives: 3.
+	
 	Tanks with lives greater than 0 do not survive Beams. If they get hit by a beam, they die and also lose 1 life.
 
-********************************************* PS9 ***************************************************
+## ********************************************* PS9 ***************************************************
 Development log:
 	December 12, 2021
 		7 commits
