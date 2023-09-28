@@ -61,14 +61,14 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 
 
 
-## ************************************* PS8 update *********************************************
+## ************************************* update *********************************************
 ### Development Log:
 
 **11/14/21**
 
 **1 Commit:**
 
-	Inital Setup for PS8
+	Inital Setup
 
 **11/16/2021**
 
@@ -218,7 +218,7 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 	
 	Tanks with lives greater than 0 do not survive Beams. If they get hit by a beam, they die and also lose 1 life.
 
-## ***************************************** PS9 *************************************************
+## ***************************************** Update *************************************************
 ### Development log:
 	December 12, 2021
 		7 commits
@@ -256,7 +256,6 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 		Fixed XML reading for walls. Now works correctly.
 		Started xml reading
 		Created server.cs, ServerContoller.cs, and Settings. Added methods to start server, receive clients' names, and sending data to clients
-		Some PS9 setup
 
 ### Design Decisions:
 
@@ -349,5 +348,5 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 		Add setting for destroying walls if hit with enough bullets
 		Add setting changing powerup functionality
 		Team mode, where teammates can't hurt you.
-		The above noted as planned features in PS8 section.
+		The above noted as planned features in above section.
 		
