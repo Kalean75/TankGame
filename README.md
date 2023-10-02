@@ -1,5 +1,6 @@
 # TankGame
-A simple 2D client/Server Tank game
+
+A simple 2D client/Server Tank game. Get the most points by destroying enemy tanks!
 
 # Tank Wars Client
 
@@ -45,19 +46,26 @@ A simple 2D client/Server Tank game
 	Right click: Fire Laser
 
 ### Features/UI elements:
-Address Box: The Server Address to connect to
+#### Address Box: 
+	The Server Address to connect to
 
-Name Box: Sets the players name
+#### Name Box: 
+	Sets the players name
 
-Connect Button: Connects to server. Must have a valid name entered.
+#### Connect Button: 
+	Connects to server. Must have a valid name entered.
 
-Menu Button: Menu Button
+#### Menu Button: 
+	Menu Button
 
-About: About the game
+#### About: 
+	About the game
 
-Controls: The game controls
+#### Controls: 
+	The game controls
 
-Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
+#### Retro Mode: 
+	Invokes the power of the Atari 2600 and a certain game buried in the Nevada desert to bring Ruin to videogame kind
 
 
 
@@ -218,7 +226,7 @@ Retro Mode: Invokes the power of the Atari 2600 and a certain game buried in the
 	
 	Tanks with lives greater than 0 do not survive Beams. If they get hit by a beam, they die and also lose 1 life.
 
-## ***************************************** Update *************************************************
+## ************************************* Update *********************************************
 ### Development log:
 	December 12, 2021
 		7 commits
